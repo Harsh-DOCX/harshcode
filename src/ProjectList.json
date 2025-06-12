@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Isaves",
+        "desc": "A normal java script integrated project that saves all your passwords locally.",
+        "link": "https://harsh-docx.github.io/isaves/"
+    },
+    {
+        "name": "quizwhiz",
+        "desc": "A fun to play quiz app build with react.js",
+        "link": "https://harsh-docx.github.io/quizwhiz/"
+    },
+    {
+        "name": "textlens",
+        "desc": "A  AI integrated web app to manipulate strings or paragraphs.",
+        "link": "https://harsh-docx.github.io/textlens/"
+    },
+    {
+        "name": "Falling Lights",
+        "desc": "A fun to play game in which user has to catch falling starts in a bucket.",
+        "link": "https://harsh-docx.github.io/fallingLights/"
+    },
+    {
+        "name": "MoneyMinded",
+        "desc": "A user friendly program to record the money transactions.",
+        "link": "https://playmaps.netlify.app/moneyminded"
+    },
+    {
+        "name": "SnakeSurge",
+        "desc": "Enjoy a modern version of the classic Snake game with smoother controls.",
+        "link": "https://playmaps.netlify.app/snakesurge"
+    },
+    {
+        "name": "MemoryMesh",
+        "desc": "A minimalist memory game that tests your ability to match pairs of cards and sharpen focus.",
+        "link": "https://playmaps.netlify.app/memorymesh"
+    },
+    {
+        "name": "GridClash",
+        "desc": "A fun to play Two player party game .",
+        "link": "https://playmaps.netlify.app/gridclash"
+    },
+    {
+        "name": "stormPeek",
+        "desc": "A open weather API integrated project to retrieve weather information.",
+        "link": "https://harsh-docx.github.io/stormpeek/"
+    },
+    {
+        "name": "ChoiceClash",
+        "desc": "A luck testing game that compete with computer",
+        "link": "https://playmaps.netlify.app/choiceclash"
+    },
+    {
+        "name": "bharatGhumo",
+        "desc": "Explore India's diverse regions—North, South, East, and West—through cultural insights and travel guides.",
+        "link": "https://bharatghumo.netlify.app"
+
+    },
+    {
+        "name": "Expense tracker",
+        "desc": "A basic expense tracker to understand tkinter.",
+        "link": "https://github.com/Harsh-DOCX/expenseTrackerPython"
+    },
+    {
+        "name": "playmaps",
+        "desc": "To visit any unlisted project you can go to the link below:.",
+        "link": "https://playmaps.netlify.app"
+    }
+]

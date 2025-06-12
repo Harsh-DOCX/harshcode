@@ -1,0 +1,134 @@
+*{
+    transition: all 0.3s ease;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-bottom: solid 3px black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10dvh;
+}
+
+.image {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #0077ff;
+    box-shadow: 0px 0px 10px #0077ff;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+nav ul {
+    display: flex !important;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #0077ff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: roboto;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover,
+nav ul li i:hover {
+    color: #00d4ff;
+    text-shadow: 0px 0px 20px #0077ff;
+    /*-accent color*/
+}
+
+nav ul li i:active {
+    transform: scale(0.8);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+nav-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    nav ul {
+        gap: 0.75rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        z-index: 101;
+    }
+
+    .feature {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100%;
+        background-color: #333;
+        padding: 2rem 1.5rem;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        transition: left 0.3s ease;
+        z-index: 100;
+    }
+
+    .feature ul {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .feature.open {
+        left: 0;
+    }
+
+    nav {
+        position: relative;
+    }
+}
+
