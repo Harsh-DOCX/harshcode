@@ -11,7 +11,7 @@ import Contact from './components/Contact';
 function App() {
   return (
     <>
-    <Router>
+    <Router basename='harshcode'>
       <Navbar />
       <Routes>
       <Route path='/' element={< Home/>} />
