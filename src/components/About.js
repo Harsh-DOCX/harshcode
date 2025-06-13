@@ -1,3 +1,7 @@
+import me from '../assets/me.jpg'
+import skills from '../assets/skills.jpg'
+import goal from '../assets/goal.png'
+
 export default function About() {
     return (
         <>
@@ -23,11 +27,11 @@ export default function About() {
                             <li><strong className="highlight">Debugging</strong> and solving technical challenges</li>
                         </ul>
                     </div>
-                    <div className="aboutImg"><img src="./me.jpg" alt="" /></div>
+                    <div className="aboutImg"><img src={me} alt="" /></div>
                 </div>
 
                 <div className="container about-section my-5">
-                    <div className="aboutImg"><img src="./skills.jpg" alt="skills" /></div>
+                    <div className="aboutImg"><img src={skills} alt="skills" /></div>
                     <div className="aboutText">
                         <h2>My Skills</h2>
                         <p>
@@ -66,7 +70,7 @@ export default function About() {
                             <li><strong className="highlight">Create user-friendly and meaningful solutions.</strong></li>
                         </ul>
                     </div>
-                    <div className="aboutImg"><img src="./goal.png" alt="goals" /></div>
+                    <div className="aboutImg"><img src={goal} alt="goals" /></div>
                 </div>
             </div>
         </>

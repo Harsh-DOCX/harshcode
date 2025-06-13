@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import stats from '../assets/stats.png'
 
 export default function Home() {
     const dynamicRef = useRef(null);
@@ -67,9 +68,8 @@ export default function Home() {
                         </ul>
                     </div>
                 </div>
-
                 <div className="img">
-                    <img src="/stats.png" alt="about-me" />
+                    <img src={stats} alt="about-me" />
                 </div>
             </div>
             

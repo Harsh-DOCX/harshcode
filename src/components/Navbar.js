@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import me from '../assets/me.jpg'
 import '../Navbar.css'
 
 export default function Navbar() {
@@ -34,7 +35,7 @@ export default function Navbar() {
                 <nav className="navbar nav" id="navbar">
                     <div className="nav-top">
                         <div className="image">
-                            <img src="/me.jpg" alt="Harsh" />
+                            <img src={me} alt="harsh" />
                         </div>
                         <div className="hamburger" onClick={openNav}>
                             <i className="fa-solid fa-bars fa-2x"></i>

@@ -17,12 +17,15 @@ export default function Project() {
             { threshold: 0.1 }
         );
 
-        cardsRef.current.forEach(el => {
+        // Lock current value of cardsRef to avoid stale references
+        const currentCards = cardsRef.current;
+
+        currentCards.forEach(el => {
             if (el) observer.observe(el);
         });
 
         return () => {
-            cardsRef.current.forEach(el => {
+            currentCards.forEach(el => {
                 if (el) observer.unobserve(el);
             });
         };
@@ -39,7 +42,9 @@ export default function Project() {
                     >
                         <h3>{item.name}</h3>
                         <p>{item.desc}</p>
-                        <button onClick={() => window.open(item.link, "_blank")}>Visit</button>
+                        <button onClick={() => window.open(item.link, "_blank")}>
+                            Visit
+                        </button>
                     </div>
                 ))}
             </div>
