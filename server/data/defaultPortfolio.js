@@ -9,9 +9,10 @@ module.exports = {
     graduated: false,
     cgpa: "7.1 / 10",
     graduationYear: 2027,
-    email: "hello@harshog.dev",
-    github: "https://github.com/OgHar",
-    linkedin: "",
+    email: "harshjadon9098@gmail.com",
+    github: "https://github.com/Harsh-DOCX",
+    linkedin: "https://www.linkedin.com/in/harsh-j-918a1835b/",
+    instagram: "https://www.instagram.com/harsh_._exe/",
     summary:
       "I am a final-year BCA student and MERN stack developer focused on building reliable web products. I care about clean interfaces, careful debugging, and shipping work that people can actually use. I bring willingness to learn, disciplined follow-through, and the kind of focus that stays with a problem until the code is correct.",
     traits: [

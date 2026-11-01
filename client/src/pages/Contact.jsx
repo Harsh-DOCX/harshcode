@@ -13,6 +13,12 @@ export default function Contact() {
   const [status, setStatus] = useState({ type: "", text: "" });
   const [confirm, setConfirm] = useState(false);
   const email = data.profile.email;
+  const contactLinks = [
+    { label: "Email", href: `mailto:${email}` },
+    { label: "Instagram", href: data.profile.instagram },
+    { label: "LinkedIn", href: data.profile.linkedin },
+    { label: "GitHub", href: data.profile.github },
+  ].filter((link) => link.href);
 
   function update(e) {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -31,7 +37,7 @@ export default function Contact() {
         utmContent: utm.utm_content || "",
         utmTerm: utm.utm_term || "",
       });
-      setStatus({ type: "ok", text: result.notice });
+      setStatus({ type: result.emailSent ? "ok" : "err", text: result.notice });
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       setStatus({ type: "err", text: err.message });
@@ -61,6 +67,18 @@ export default function Contact() {
           <CopyButton text={email} />
         </p>
       </header>
+      <nav className="contact-options glass card" aria-label="Other ways to contact">
+        {contactLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith("https://") ? "_blank" : undefined}
+            rel={link.href.startsWith("https://") ? "noopener noreferrer" : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
       <form className="glass card form" style={{ marginTop: 20 }} onSubmit={onSubmit} noValidate>
         <label>
           Name

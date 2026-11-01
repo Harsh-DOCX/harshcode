@@ -16,6 +16,7 @@ const empty = {
     email: "",
     github: "",
     linkedin: "",
+    instagram: "",
     summary: "",
     traits: [],
   },
@@ -195,6 +196,10 @@ export default function Admin() {
         <label>
           LinkedIn
           <input value={p.linkedin} onChange={(e) => setProfile("linkedin", e.target.value)} />
+        </label>
+        <label>
+          Instagram
+          <input value={p.instagram || ""} onChange={(e) => setProfile("instagram", e.target.value)} />
         </label>
         <label>
           Summary

@@ -65,7 +65,7 @@ export function jsonLd(portfolio) {
           "@type": "PostalAddress",
           addressCountry: "IN",
         },
-        sameAs: [p.github, p.linkedin].filter(Boolean),
+        sameAs: [p.github, p.linkedin, p.instagram].filter(Boolean),
       },
       {
         "@type": "WebSite",

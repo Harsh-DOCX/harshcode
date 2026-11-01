@@ -1,8 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#050505"/>
-  <rect x="48" y="48" width="1104" height="534" rx="28" fill="rgba(196,200,206,0.08)" stroke="#c4c8ce" stroke-opacity="0.35"/>
-  <text x="90" y="230" font-family="Georgia, serif" font-size="88" fill="#e8eaed">Harsh</text>
-  <text x="90" y="310" font-family="Georgia, serif" font-size="36" fill="#e11d48">MERN Stack Developer</text>
-  <text x="90" y="390" font-family="Arial, sans-serif" font-size="26" fill="#c4c8ce">Black · Silver · Crimson · Glassmorphism</text>
-  <text x="90" y="500" font-family="Arial, sans-serif" font-size="22" fill="#9aa0a6">www.harshog.dev</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="90" y1="30" x2="1100" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171719"/>
+      <stop offset="0.55" stop-color="#080809"/>
+      <stop offset="1" stop-color="#1A080D"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="0" cy="0" r="1" gradientTransform="matrix(270 250 -250 270 620 280)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF405F" stop-opacity=".34"/>
+      <stop offset=".55" stop-color="#B80F32" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#650719" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="silver" x1="380" y1="170" x2="810" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2F2F3"/>
+      <stop offset=".48" stop-color="#8F9095"/>
+      <stop offset="1" stop-color="#45464B"/>
+    </linearGradient>
+    <linearGradient id="red" x1="350" y1="160" x2="860" y2="550" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF526D"/>
+      <stop offset=".5" stop-color="#E31843"/>
+      <stop offset="1" stop-color="#790B25"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#252529" stop-opacity=".96"/>
+      <stop offset="1" stop-color="#101013" stop-opacity=".94"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" stroke="#A5A5AA" stroke-opacity=".12" stroke-width="1"/>
+      <circle cx="1" cy="1" r="1.2" fill="#E6E6E8" fill-opacity=".2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="700" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="700" rx="28" fill="url(#grid)"/>
+  <circle cx="625" cy="300" r="285" fill="url(#orb)"/>
+  <circle cx="625" cy="300" r="220" stroke="#E51B45" stroke-opacity=".2" stroke-width="1.5"/>
+  <circle cx="625" cy="300" r="184" stroke="#D9D9DC" stroke-opacity=".16" stroke-width="1"/>
+
+  <!-- Crimson corner accents -->
+  <path d="M0 0H330L0 190V0Z" fill="#A70D2D" fill-opacity=".22"/>
+  <path d="M0 188L330 0" stroke="#F52B50" stroke-width="3" stroke-opacity=".8"/>
+  <path d="M1200 700H890L1200 510V700Z" fill="#A70D2D" fill-opacity=".2"/>
+  <path d="M1200 512L890 700" stroke="#F52B50" stroke-width="3" stroke-opacity=".75"/>
+
+  <!-- Floating code panels -->
+  <g transform="translate(95 225) rotate(-8 145 100)">
+    <rect width="290" height="205" rx="18" fill="url(#panel)" stroke="#77787E" stroke-opacity=".65" stroke-width="1.5"/>
+    <path d="M0 48H290" stroke="#77787E" stroke-opacity=".45"/>
+    <circle cx="24" cy="24" r="5" fill="#F12A50"/>
+    <circle cx="43" cy="24" r="5" fill="#9B9CA2"/>
+    <circle cx="62" cy="24" r="5" fill="#55565B"/>
+    <path d="M38 91L19 108L38 125M68 91L87 108L68 125M58 136L72 80" stroke="#F02A50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M120 88H245M120 111H220M120 134H252M38 166H190" stroke="#BFC0C5" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+    <path d="M120 88H183M120 134H168" stroke="#F02A50" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(815 205) rotate(7 145 100)">
+    <rect width="290" height="205" rx="18" fill="url(#panel)" stroke="#77787E" stroke-opacity=".65" stroke-width="1.5"/>
+    <path d="M0 48H290" stroke="#77787E" stroke-opacity=".45"/>
+    <circle cx="24" cy="24" r="5" fill="#F12A50"/>
+    <circle cx="43" cy="24" r="5" fill="#9B9CA2"/>
+    <circle cx="62" cy="24" r="5" fill="#55565B"/>
+    <g font-family="monospace" font-size="14" fill="#AEB0B6" opacity=".8">
+      <text x="24" y="82">01</text><text x="24" y="110">02</text><text x="24" y="138">03</text><text x="24" y="166">04</text>
+    </g>
+    <path d="M62 77H238M62 105H202M62 133H248M62 161H180" stroke="#BFC0C5" stroke-opacity=".42" stroke-width="5" stroke-linecap="round"/>
+    <path d="M62 77H145M62 133H168M62 161H116" stroke="#F02A50" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Central abstract code emblem -->
+  <g filter="url(#glow)">
+    <path d="M490 242L405 315L490 388" stroke="url(#silver)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M760 242L845 315L760 388" stroke="url(#silver)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M675 205L580 425" stroke="url(#red)" stroke-width="24" stroke-linecap="round"/>
+  </g>
+  <path d="M490 242L405 315L490 388M760 242L845 315L760 388" stroke="#F4F4F5" stroke-opacity=".35" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M675 205L580 425" stroke="#FF7186" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Orbit and platform -->
+  <ellipse cx="625" cy="475" rx="390" ry="88" stroke="#E8E8EA" stroke-opacity=".28" stroke-width="2"/>
+  <ellipse cx="625" cy="475" rx="390" ry="88" stroke="#E51B45" stroke-opacity=".75" stroke-width="3" filter="url(#glow)"/>
+  <path d="M250 480C360 590 890 590 1000 480" stroke="#A9A9AE" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M270 495C420 560 830 560 980 495" stroke="#E51B45" stroke-opacity=".45" stroke-width="2"/>
+
+  <!-- Skill tiles -->
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(220 535)">
+      <rect width="150" height="112" rx="17" fill="#151518" stroke="#D4D4D8" stroke-opacity=".42"/>
+      <rect x="1" y="1" width="148" height="110" rx="16" stroke="#E51B45" stroke-opacity=".55"/>
+      <path d="M75 24L105 42L94 78H56L45 42L75 24Z" stroke="#E9E9EB" stroke-width="4" fill="none"/>
+      <text x="75" y="65" font-size="25" font-weight="700" fill="#F0F0F2">JS</text>
+      <text x="75" y="98" font-size="14" fill="#BFC0C5">JavaScript</text>
+    </g>
+    <g transform="translate(395 535)">
+      <rect width="150" height="112" rx="17" fill="#151518" stroke="#D4D4D8" stroke-opacity=".42"/>
+      <rect x="1" y="1" width="148" height="110" rx="16" stroke="#E51B45" stroke-opacity=".55"/>
+      <path d="M75 24L105 42L94 78H56L45 42L75 24Z" stroke="#E51B45" stroke-width="4" fill="none"/>
+      <text x="75" y="65" font-size="24" font-weight="700" fill="#F02A50">R</text>
+      <text x="75" y="98" font-size="14" fill="#BFC0C5">React</text>
+    </g>
+    <g transform="translate(570 535)">
+      <rect width="150" height="112" rx="17" fill="#151518" stroke="#D4D4D8" stroke-opacity=".42"/>
+      <rect x="1" y="1" width="148" height="110" rx="16" stroke="#E51B45" stroke-opacity=".55"/>
+      <path d="M75 24L105 42L94 78H56L45 42L75 24Z" stroke="#E9E9EB" stroke-width="4" fill="none"/>
+      <text x="75" y="65" font-size="24" font-weight="700" fill="#F0F0F2">N</text>
+      <text x="75" y="98" font-size="14" fill="#BFC0C5">Node.js</text>
+    </g>
+    <g transform="translate(745 535)">
+      <rect width="150" height="112" rx="17" fill="#151518" stroke="#D4D4D8" stroke-opacity=".42"/>
+      <rect x="1" y="1" width="148" height="110" rx="16" stroke="#E51B45" stroke-opacity=".55"/>
+      <circle cx="75" cy="51" r="27" stroke="#E9E9EB" stroke-width="4"/>
+      <path d="M75 27V75M51 51H99" stroke="#E51B45" stroke-width="4"/>
+      <text x="75" y="98" font-size="14" fill="#BFC0C5">Python</text>
+    </g>
+    <g transform="translate(920 535)">
+      <rect width="150" height="112" rx="17" fill="#151518" stroke="#D4D4D8" stroke-opacity=".42"/>
+      <rect x="1" y="1" width="148" height="110" rx="16" stroke="#E51B45" stroke-opacity=".55"/>
+      <path d="M55 33H95M55 48H95M55 63H95" stroke="#E9E9EB" stroke-width="5" stroke-linecap="round"/>
+      <text x="75" y="98" font-size="14" fill="#BFC0C5">SQL / Git</text>
+    </g>
+  </g>
+
+  <!-- Small highlights -->
+  <circle cx="625" cy="102" r="4" fill="#F02A50" filter="url(#glow)"/>
+  <circle cx="170" cy="485" r="3" fill="#F02A50"/>
+  <circle cx="1030" cy="465" r="3" fill="#F02A50"/>
+  <path d="M70 90H180M1020 90H1130M70 610H150M1050 610H1130" stroke="#BFC0C5" stroke-opacity=".35" stroke-width="2"/>
 </svg>

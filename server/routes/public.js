@@ -1,5 +1,6 @@
 const express = require("express");
 const { getPortfolio, saveMessage } = require("../store");
+const { assertEmailConfigured, sendContactEmail } = require("../mailer");
 
 const router = express.Router();
 
@@ -13,30 +14,63 @@ router.get("/portfolio", async (_req, res) => {
 });
 
 router.post("/contact", async (req, res) => {
+  const body = req.body && typeof req.body === "object" && !Array.isArray(req.body) ? req.body : {};
+  const name = String(body.name || "").trim();
+  const email = String(body.email || "").trim();
+  const message = String(body.message || "").trim();
+  if (
+    name.length < 2 ||
+    name.length > 120 ||
+    email.length > 180 ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+    message.length < 10 ||
+    message.length > 4000
+  ) {
+    return res.status(400).json({
+      error: "Enter a name, valid email, and a message between 10 and 4000 characters.",
+    });
+  }
+
   try {
-    const name = String(req.body.name || "").trim();
-    const email = String(req.body.email || "").trim();
-    const message = String(req.body.message || "").trim();
-    if (name.length < 2 || !email.includes("@") || message.length < 10) {
-      return res.status(400).json({
-        error: "Please provide your name, a valid email, and a message of at least 10 characters.",
+    assertEmailConfigured();
+  } catch (error) {
+    if (error.code === "EMAIL_NOT_CONFIGURED") {
+      return res.status(503).json({
+        error: "Email delivery is not configured. Please contact me using one of the links instead.",
       });
     }
+    console.error("Unable to validate contact email configuration:", error.message);
+    return res.status(500).json({ error: "The contact form is temporarily unavailable." });
+  }
+
+  try {
     await saveMessage({
       name,
       email,
       message,
       utm: {
-        source: req.body.utmSource || "",
-        medium: req.body.utmMedium || "",
-        campaign: req.body.utmCampaign || "",
-        content: req.body.utmContent || "",
-        term: req.body.utmTerm || "",
+        source: String(body.utmSource || "").slice(0, 200),
+        medium: String(body.utmMedium || "").slice(0, 200),
+        campaign: String(body.utmCampaign || "").slice(0, 200),
+        content: String(body.utmContent || "").slice(0, 200),
+        term: String(body.utmTerm || "").slice(0, 200),
       },
     });
-    res.status(201).json({ ok: true, notice: "Message received. Thank you." });
-  } catch {
-    res.status(500).json({ error: "The message could not be sent. Try again shortly." });
+  } catch (error) {
+    console.error("Unable to save contact message:", error.message);
+    return res.status(500).json({ error: "The message could not be saved. Please try again." });
+  }
+
+  try {
+    await sendContactEmail({ name, email, message });
+    return res.status(201).json({ ok: true, emailSent: true, notice: "Message sent. Thank you." });
+  } catch (error) {
+    console.error("Contact message saved, but email notification failed:", error.message);
+    return res.status(201).json({
+      ok: true,
+      emailSent: false,
+      notice: "Your message was saved, but the email notification failed. Please contact me directly.",
+    });
   }
 });
 

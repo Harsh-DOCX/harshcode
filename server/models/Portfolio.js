@@ -15,6 +15,7 @@ const portfolioSchema = new mongoose.Schema(
       email: String,
       github: String,
       linkedin: String,
+      instagram: String,
       summary: String,
       traits: [String],
     },
