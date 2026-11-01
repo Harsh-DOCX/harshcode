@@ -1,0 +1,14 @@
+# Harsh
+
+> MERN stack developer based in India. Final-year BCA student (expected 2027), current CGPA 7.1 / 10.
+
+Site: https://www.harshog.dev
+
+## Pages
+- https://www.harshog.dev/
+- https://www.harshog.dev/about
+- https://www.harshog.dev/skills
+- https://www.harshog.dev/projects
+- https://www.harshog.dev/experience
+- https://www.harshog.dev/education
+- https://www.harshog.dev/contact

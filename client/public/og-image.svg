@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#050505"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" fill="rgba(196,200,206,0.08)" stroke="#c4c8ce" stroke-opacity="0.35"/>
+  <text x="90" y="230" font-family="Georgia, serif" font-size="88" fill="#e8eaed">Harsh</text>
+  <text x="90" y="310" font-family="Georgia, serif" font-size="36" fill="#e11d48">MERN Stack Developer</text>
+  <text x="90" y="390" font-family="Arial, sans-serif" font-size="26" fill="#c4c8ce">Black · Silver · Crimson · Glassmorphism</text>
+  <text x="90" y="500" font-family="Arial, sans-serif" font-size="22" fill="#9aa0a6">www.harshog.dev</text>
+</svg>

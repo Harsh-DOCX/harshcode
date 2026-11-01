@@ -1,0 +1,17 @@
+{
+  "name": "Harsh Portfolio",
+  "short_name": "Harsh",
+  "description": "Portfolio of Harsh, MERN stack developer and final-year BCA student.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#e11d48",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
