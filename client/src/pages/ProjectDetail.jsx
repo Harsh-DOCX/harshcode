@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import Seo from "../components/Seo.jsx";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
+import ProjectLinks from "../components/ProjectLinks.jsx";
 import { usePortfolio } from "../context/PortfolioContext.jsx";
 import NotFound from "./NotFound.jsx";
 
@@ -28,6 +29,7 @@ export default function ProjectDetail() {
         <p>
           <strong>Stack:</strong> {project.stack}
         </p>
+        <ProjectLinks project={project} />
         <h2>Highlights</h2>
         <ul>
           {(project.highlights || []).map((h) => (

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo.jsx";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
+import ProjectLinks from "../components/ProjectLinks.jsx";
 import { usePortfolio } from "../context/PortfolioContext.jsx";
 
 export default function Projects() {
@@ -14,14 +15,20 @@ export default function Projects() {
         <p>Selected work across web, desktop, and current builds.</p>
       </header>
       <div className="card-grid" style={{ marginTop: 20 }}>
-        {data.projects.map((project) => (
-          <Link className="glass project-card" key={project.slug} to={`/projects/${project.slug}`}>
-            <p className="kicker">{project.status}</p>
-            <h2>{project.title}</h2>
-            <p>{project.summary}</p>
-            <p className="meta">{project.stack}</p>
-          </Link>
-        ))}
+        {data.projects.map((project) => {
+          const projectPath = `/projects/${project.slug}`;
+          return (
+            <article className="glass project-card" key={project.slug}>
+              <Link className="project-card-main" to={projectPath}>
+                <p className="kicker">{project.status}</p>
+                <h2>{project.title}</h2>
+                <p>{project.summary}</p>
+                <p className="meta">{project.stack}</p>
+              </Link>
+              <ProjectLinks project={project} />
+            </article>
+          );
+        })}
       </div>
       <h2 style={{ marginTop: 32 }}>Currently working on</h2>
       <div className="card-grid">

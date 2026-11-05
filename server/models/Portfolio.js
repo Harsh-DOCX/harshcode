@@ -46,6 +46,8 @@ const portfolioSchema = new mongoose.Schema(
         stack: String,
         status: String,
         summary: String,
+        githubUrl: String,
+        websiteUrl: String,
         highlights: [String],
       },
     ],

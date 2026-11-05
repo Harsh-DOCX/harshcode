@@ -299,6 +299,26 @@ h3,
   padding: 20px;
 }
 
+.project-card-main {
+  display: block;
+}
+
+.project-links {
+  margin-top: 12px;
+}
+
+.admin-dropdown > summary {
+  color: var(--silver-bright);
+  cursor: pointer;
+  font-family: Syne, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.admin-dropdown[open] > summary {
+  margin-bottom: 16px;
+}
+
 .meta {
   color: var(--muted);
   font-size: 0.92rem;
