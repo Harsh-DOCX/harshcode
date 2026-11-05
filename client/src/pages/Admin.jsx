@@ -148,8 +148,8 @@ export default function Admin() {
       </header>
       {notice.text && <div className={`alert ${notice.type}`}>{notice.text}</div>}
 
-      <section className="glass card form" style={{ marginTop: 16 }}>
-        <h2>Profile</h2>
+      <details className="glass card form admin-dropdown" style={{ marginTop: 16 }}>
+        <summary>Profile</summary>
         <label>
           Name
           <input value={p.name} onChange={(e) => setProfile("name", e.target.value)} />
@@ -212,27 +212,30 @@ export default function Admin() {
             onChange={(e) => setProfile("traits", e.target.value.split("\n").filter(Boolean))}
           />
         </label>
-      </section>
+      </details>
 
       <details className="glass card admin-dropdown" style={{ marginTop: 16 }}>
         <summary>Skills</summary>
         {draft.skills.map((skill, i) => (
-          <div className="form" key={i} style={{ marginBottom: 12 }}>
-            <input value={skill.name} onChange={(e) => updateList("skills", i, "name", e.target.value)} placeholder="Name" />
-            <input
-              value={skill.category}
-              onChange={(e) => updateList("skills", i, "category", e.target.value)}
-              placeholder="Category"
-            />
-            <input
-              type="number"
-              value={skill.level}
-              onChange={(e) => updateList("skills", i, "level", Number(e.target.value))}
-            />
-            <button type="button" className="btn" onClick={() => removeItem("skills", i)}>
-              Remove skill
-            </button>
-          </div>
+          <details className="admin-dropdown-item" key={i}>
+            <summary>{skill.name || `Skill ${i + 1}`}</summary>
+            <div className="form" style={{ marginTop: 12 }}>
+              <input value={skill.name} onChange={(e) => updateList("skills", i, "name", e.target.value)} placeholder="Name" />
+              <input
+                value={skill.category}
+                onChange={(e) => updateList("skills", i, "category", e.target.value)}
+                placeholder="Category"
+              />
+              <input
+                type="number"
+                value={skill.level}
+                onChange={(e) => updateList("skills", i, "level", Number(e.target.value))}
+              />
+              <button type="button" className="btn" onClick={() => removeItem("skills", i)}>
+                Remove skill
+              </button>
+            </div>
+          </details>
         ))}
         <button type="button" className="btn" onClick={() => addItem("skills", { name: "", category: "", level: 70 })}>
           Add skill
@@ -242,34 +245,37 @@ export default function Admin() {
       <details className="glass card admin-dropdown" style={{ marginTop: 16 }}>
         <summary>Projects</summary>
         {draft.projects.map((project, i) => (
-          <div className="form" key={i} style={{ marginBottom: 16 }}>
-            <input value={project.title} onChange={(e) => updateList("projects", i, "title", e.target.value)} placeholder="Title" />
-            <input value={project.slug} onChange={(e) => updateList("projects", i, "slug", e.target.value)} placeholder="slug" />
-            <input value={project.stack} onChange={(e) => updateList("projects", i, "stack", e.target.value)} placeholder="Stack" />
-            <input value={project.status} onChange={(e) => updateList("projects", i, "status", e.target.value)} />
-            <textarea value={project.summary} onChange={(e) => updateList("projects", i, "summary", e.target.value)} />
-            <label>
-              GitHub repository URL (optional)
-              <input
-                type="url"
-                value={project.githubUrl || ""}
-                onChange={(e) => updateList("projects", i, "githubUrl", e.target.value)}
-                placeholder="https://github.com/username/repository"
-              />
-            </label>
-            <label>
-              Website URL (optional)
-              <input
-                type="url"
-                value={project.websiteUrl || ""}
-                onChange={(e) => updateList("projects", i, "websiteUrl", e.target.value)}
-                placeholder="https://example.com"
-              />
-            </label>
-            <button type="button" className="btn" onClick={() => removeItem("projects", i)}>
-              Remove project
-            </button>
-          </div>
+          <details className="admin-dropdown-item" key={i}>
+            <summary>{project.title || `Project ${i + 1}`}</summary>
+            <div className="form" style={{ marginTop: 12 }}>
+              <input value={project.title} onChange={(e) => updateList("projects", i, "title", e.target.value)} placeholder="Title" />
+              <input value={project.slug} onChange={(e) => updateList("projects", i, "slug", e.target.value)} placeholder="slug" />
+              <input value={project.stack} onChange={(e) => updateList("projects", i, "stack", e.target.value)} placeholder="Stack" />
+              <input value={project.status} onChange={(e) => updateList("projects", i, "status", e.target.value)} />
+              <textarea value={project.summary} onChange={(e) => updateList("projects", i, "summary", e.target.value)} />
+              <label>
+                GitHub repository URL (optional)
+                <input
+                  type="url"
+                  value={project.githubUrl || ""}
+                  onChange={(e) => updateList("projects", i, "githubUrl", e.target.value)}
+                  placeholder="https://github.com/username/repository"
+                />
+              </label>
+              <label>
+                Website URL (optional)
+                <input
+                  type="url"
+                  value={project.websiteUrl || ""}
+                  onChange={(e) => updateList("projects", i, "websiteUrl", e.target.value)}
+                  placeholder="https://example.com"
+                />
+              </label>
+              <button type="button" className="btn" onClick={() => removeItem("projects", i)}>
+                Remove project
+              </button>
+            </div>
+          </details>
         ))}
         <button
           type="button"
@@ -294,15 +300,18 @@ export default function Admin() {
       <details className="glass card admin-dropdown" style={{ marginTop: 16 }}>
         <summary>Currently working on</summary>
         {(draft.currentWork || []).map((item, i) => (
-          <div className="form" key={i} style={{ marginBottom: 16 }}>
-            <input value={item.title} onChange={(e) => updateList("currentWork", i, "title", e.target.value)} />
-            <input value={item.slug} onChange={(e) => updateList("currentWork", i, "slug", e.target.value)} />
-            <input value={item.stack} onChange={(e) => updateList("currentWork", i, "stack", e.target.value)} />
-            <textarea value={item.summary} onChange={(e) => updateList("currentWork", i, "summary", e.target.value)} />
-            <button type="button" className="btn" onClick={() => removeItem("currentWork", i)}>
-              Remove
-            </button>
-          </div>
+          <details className="admin-dropdown-item" key={i}>
+            <summary>{item.title || `Current work ${i + 1}`}</summary>
+            <div className="form" style={{ marginTop: 12 }}>
+              <input value={item.title} onChange={(e) => updateList("currentWork", i, "title", e.target.value)} />
+              <input value={item.slug} onChange={(e) => updateList("currentWork", i, "slug", e.target.value)} />
+              <input value={item.stack} onChange={(e) => updateList("currentWork", i, "stack", e.target.value)} />
+              <textarea value={item.summary} onChange={(e) => updateList("currentWork", i, "summary", e.target.value)} />
+              <button type="button" className="btn" onClick={() => removeItem("currentWork", i)}>
+                Remove
+              </button>
+            </div>
+          </details>
         ))}
         <button
           type="button"
@@ -313,19 +322,22 @@ export default function Admin() {
         </button>
       </details>
 
-      <section className="glass card" style={{ marginTop: 16 }}>
-        <h2>Experience</h2>
+      <details className="glass card admin-dropdown" style={{ marginTop: 16 }}>
+        <summary>Experience</summary>
         {draft.experience.map((job, i) => (
-          <div className="form" key={i} style={{ marginBottom: 16 }}>
-            <input value={job.role} onChange={(e) => updateList("experience", i, "role", e.target.value)} placeholder="Role" />
-            <input value={job.company} onChange={(e) => updateList("experience", i, "company", e.target.value)} placeholder="Company" />
-            <input value={job.start} onChange={(e) => updateList("experience", i, "start", e.target.value)} />
-            <input value={job.end} onChange={(e) => updateList("experience", i, "end", e.target.value)} />
-            <textarea value={job.summary} onChange={(e) => updateList("experience", i, "summary", e.target.value)} />
-            <button type="button" className="btn" onClick={() => removeItem("experience", i)}>
-              Remove role
-            </button>
-          </div>
+          <details className="admin-dropdown-item" key={i}>
+            <summary>{job.role || job.company || `Experience ${i + 1}`}</summary>
+            <div className="form" style={{ marginTop: 12 }}>
+              <input value={job.role} onChange={(e) => updateList("experience", i, "role", e.target.value)} placeholder="Role" />
+              <input value={job.company} onChange={(e) => updateList("experience", i, "company", e.target.value)} placeholder="Company" />
+              <input value={job.start} onChange={(e) => updateList("experience", i, "start", e.target.value)} />
+              <input value={job.end} onChange={(e) => updateList("experience", i, "end", e.target.value)} />
+              <textarea value={job.summary} onChange={(e) => updateList("experience", i, "summary", e.target.value)} />
+              <button type="button" className="btn" onClick={() => removeItem("experience", i)}>
+                Remove role
+              </button>
+            </div>
+          </details>
         ))}
         <button
           type="button"
@@ -334,21 +346,24 @@ export default function Admin() {
         >
           Add experience
         </button>
-      </section>
+      </details>
 
-      <section className="glass card" style={{ marginTop: 16 }}>
-        <h2>Education</h2>
+      <details className="glass card admin-dropdown" style={{ marginTop: 16 }}>
+        <summary>Education</summary>
         {draft.education.map((item, i) => (
-          <div className="form" key={i} style={{ marginBottom: 16 }}>
-            <input value={item.title} onChange={(e) => updateList("education", i, "title", e.target.value)} />
-            <input value={item.institution} onChange={(e) => updateList("education", i, "institution", e.target.value)} />
-            <input value={item.year} onChange={(e) => updateList("education", i, "year", e.target.value)} />
-            <input value={item.result} onChange={(e) => updateList("education", i, "result", e.target.value)} />
-            <input value={item.status} onChange={(e) => updateList("education", i, "status", e.target.value)} />
-            <button type="button" className="btn" onClick={() => removeItem("education", i)}>
-              Remove
-            </button>
-          </div>
+          <details className="admin-dropdown-item" key={i}>
+            <summary>{item.title || `Education ${i + 1}`}</summary>
+            <div className="form" style={{ marginTop: 12 }}>
+              <input value={item.title} onChange={(e) => updateList("education", i, "title", e.target.value)} />
+              <input value={item.institution} onChange={(e) => updateList("education", i, "institution", e.target.value)} />
+              <input value={item.year} onChange={(e) => updateList("education", i, "year", e.target.value)} />
+              <input value={item.result} onChange={(e) => updateList("education", i, "result", e.target.value)} />
+              <input value={item.status} onChange={(e) => updateList("education", i, "status", e.target.value)} />
+              <button type="button" className="btn" onClick={() => removeItem("education", i)}>
+                Remove
+              </button>
+            </div>
+          </details>
         ))}
         <button
           type="button"
@@ -357,7 +372,7 @@ export default function Admin() {
         >
           Add education
         </button>
-      </section>
+      </details>
 
       <div className="btn-row">
         <button type="button" className="btn btn-primary" onClick={() => setConfirm(true)}>
@@ -374,19 +389,19 @@ export default function Admin() {
           Sign out
         </button>
       </div>
-      <h2>Incoming messages</h2>
-      <div className="timeline">
+      <details className="glass card admin-dropdown" style={{ marginTop: 16 }}>
+        <summary>Incoming messages</summary>
         {messages.map((m, i) => (
-          <article className="glass card" key={m._id || i}>
-            <h3>
-              {m.name} · {m.email}
-            </h3>
-            <p>{m.message}</p>
-            <p className="meta">{m.createdAt}</p>
-          </article>
+          <details className="admin-dropdown-item" key={m._id || i}>
+            <summary>{m.name} · {m.email}</summary>
+            <article className="card">
+              <p>{m.message}</p>
+              <p className="meta">{m.createdAt}</p>
+            </article>
+          </details>
         ))}
         {!messages.length && <p className="meta">No messages yet.</p>}
-      </div>
+      </details>
       {confirm && (
         <ConfirmModal
           title="Publish these edits?"

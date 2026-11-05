@@ -319,6 +319,17 @@ h3,
   margin-bottom: 16px;
 }
 
+.admin-dropdown-item {
+  border-top: 1px solid var(--stroke);
+  padding: 12px 0;
+}
+
+.admin-dropdown-item > summary {
+  color: var(--silver-bright);
+  cursor: pointer;
+  font-weight: 600;
+}
+
 .meta {
   color: var(--muted);
   font-size: 0.92rem;
